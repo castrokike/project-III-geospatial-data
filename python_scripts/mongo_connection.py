@@ -1,3 +1,5 @@
+# This script contains libraries and functions that will be used to establish mongo database connections and specific queries to it.
+# It will be called by the analysis jupyter notebook.
 
 from pymongo import MongoClient
 import pandas as pd
