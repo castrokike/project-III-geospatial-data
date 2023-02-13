@@ -93,3 +93,123 @@ def add_marker (name, color, icon_, coordinates, map):
     marker_.add_to(map)
     return map
 
+def sf_map(sf_center, sf_south):
+    """
+    This function takes that dataframes for companies in the San Francisco City Center and southern cities and plots them in a map.
+    It sorts companies in their distinct groups based on the company type and city where it is located.
+    """
+    # Initialize the map
+    sf_map = Map(location = [37.6, -122.15], zoom_start = 10)
+
+    # Create the groups and names them according to the ammount of companies
+    sf_center_tech = folium.FeatureGroup(name=f"Center Tech ({sf_center[sf_center['type'] == 'tech'].shape[0]})")
+    sf_center_design = folium.FeatureGroup(name = f"Center Design ({sf_center[sf_center['type'] == 'design'].shape[0]})")
+    sf_south_tech = folium.FeatureGroup(name=f"South Tech ({sf_south[sf_south['type'] == 'tech'].shape[0]})")
+    sf_south_design = folium.FeatureGroup(name = f"South Design ({sf_south[sf_south['type'] == 'design'].shape[0]})")
+    
+    # Populates the SF Center map
+    for index, row in sf_center.iterrows():
+            
+            # 1. Marker: creates the marker in the office location and adds the name to it.
+            city = {
+                "location": [row["office latitude"], row["office longitude"]],
+                "tooltip": row["name"]
+            }
+                
+            # 2. Add the icon: based on the type of company
+            
+            if row["type"] == "tech":
+                icon = Icon (
+                    color = "blue",
+                    opacity = 0.5,
+                    prefix="fa",
+                    icon="briefcase",
+                )
+            else:
+                icon = Icon(
+                    color = "green",
+                    opacity = 0.5,
+                    prefix="fa",
+                    icon="shirt"
+                )
+                
+            
+            # 3. Creates the map Marker
+            new_marker = Marker (**city, icon = icon)
+            
+            # 4. Adds the marker to the corresponding group
+            if row["type"] == "tech":
+                new_marker.add_to(sf_center_tech)
+            else:
+                new_marker.add_to(sf_center_design)
+
+    # Populates the SF South map
+    for index, row in sf_south.iterrows():
+            
+            # 1. Marker: creates the marker in the office location and adds the name to it.
+            city = {
+                "location": [row["office latitude"], row["office longitude"]],
+                "tooltip": row["name"]
+            }
+                
+            # 2. Add the icon: based on the type of company
+            
+            if row["type"] == "tech":
+                icon = Icon (
+                    color = "blue",
+                    opacity = 0.5,
+                    prefix="fa",
+                    icon="briefcase",
+                )
+            else:
+                icon = Icon(
+                    color = "green",
+                    opacity = 0.5,
+                    prefix="fa",
+                    icon="shirt"
+                )
+                
+            
+            # 3. Creates the map Marker
+            new_marker = Marker (**city, icon = icon)
+            
+            # 4. Adds the marker to the corresponding group
+            if row["type"] == "tech":
+                new_marker.add_to(sf_south_tech)
+            else:
+                new_marker.add_to(sf_south_design)
+
+    # Now we add the groups to the maps
+    sf_center_tech.add_to(sf_map)
+    sf_center_design.add_to(sf_map)
+    sf_south_tech.add_to(sf_map)
+    sf_south_design.add_to(sf_map)
+    
+    # Find the mean coordinates for each group and city:
+    sf_center_tech_mean = mean_coordinates(sf_center[(sf_center["type"] == 'tech')])
+    sf_center_design_mean = mean_coordinates(sf_center[(sf_center["type"] == 'design')])
+    sf_south_tech_mean = mean_coordinates(sf_south[(sf_south["type"] == 'tech')])
+    sf_south_design_mean = mean_coordinates(sf_south[(sf_south["type"] == 'design')])
+
+    # Adds the mean coordinate points to the map
+    add_marker("sf_center_tech_mean","orange","computer",sf_center_tech_mean,sf_map)
+    add_marker("sf_center_design_mean","red","fa-shopping-bag",sf_center_design_mean,sf_map)
+    add_marker("sf_south_tech_mean","orange","computer",sf_south_tech_mean,sf_map)
+    add_marker("sf_south_design_mean","red","fa-shopping-bag",sf_south_design_mean,sf_map)
+
+    # Add the layer control
+    folium.LayerControl(collapsed=False, position="topleft").add_to(sf_map)
+    return sf_map
+
+def mean_coordinates_raw (list_):
+    x = 0
+    y = 0
+    for i in list_:
+        x +=i[0]
+        y +=i[1]
+    x = x/len(list_)
+    y = y/len(list_)
+
+    return [round(x,4), round(y,4)]
+
+
