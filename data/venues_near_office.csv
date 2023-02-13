@@ -1,0 +1,88 @@
+,name,distance,latitude,longitude,category_id,category_name,group
+0,SF Puppy Love,378,37.779676,-122.401321,11134,Pet Grooming Service,Pet Grooming
+1,Doggie Day Spaw,418,37.778665,-122.40259,11134,Pet Grooming Service,Pet Grooming
+2,Tefani & So. Dogcare,676,37.787193,-122.39915,11134,Pet Grooming Service,Pet Grooming
+3,Furry Tales,1161,37.776754,-122.392943,11134,Pet Grooming Service,Pet Grooming
+4,Tefani & So. Dogcare,1189,37.772824,-122.410202,11134,Pet Grooming Service,Pet Grooming
+5,South Paw Bathhouse Feed Co.,1281,37.783786,-122.389414,11134,Pet Grooming Service,Pet Grooming
+6,Pawtrero Hill BathHouse & Feed,1288,37.78382,-122.389322,11134,Pet Grooming Service,Pet Grooming
+7,Benny & Suki’s,1288,37.788525,-122.416362,11134,Pet Grooming Service,Pet Grooming
+8,Bernie's Grooming City Dogs,1294,37.783824,-122.389344,11134,Pet Grooming Service,Pet Grooming
+9,The Preppy Puppy,1413,37.779174,-122.419465,11134,Pet Grooming Service,Pet Grooming
+0,Mixt,372,37.785581,-122.404432,13068,American Restaurant,Vegan Food
+1,The Bite,429,37.78127,-122.408583,13302,Mediterranean Restaurant,Vegan Food
+2,Ginger Bowls,613,37.776849,-122.402842,13072,Asian Restaurant,Vegan Food
+3,Thai Basil Cart,639,37.776768,-122.402622,13352,Thai Restaurant,Vegan Food
+4,Graze Salad Bar,640,37.781898,-122.411168,13332,Salad Restaurant,Vegan Food
+5,The Flying Falafel,646,37.78124,-122.411217,13302,Mediterranean Restaurant,Vegan Food
+6,Roz Ka Affaire,646,37.776665,-122.402687,13199,Indian Restaurant,Vegan Food
+7,Sweetgreen,711,37.787182,-122.398432,13065,Restaurant,Vegan Food
+8,The Thonglor,782,37.787265,-122.410194,13072,Asian Restaurant,Vegan Food
+9,Millenium Restaurant,938,37.786879,-122.412955,13377,Vegan and Vegetarian Restaurant,Vegan Food
+10,Vida Cantina SF,1001,37.79146,-122.403704,13009,Cocktail Bar,Vegan Food
+11,The Plant Cafe Organic,1061,37.79175,-122.402358,13034,Café,Vegan Food
+12,Millennium,1088,37.780736,-122.416117,13377,Vegan and Vegetarian Restaurant,Vegan Food
+13,Golden Era Vegan Restaurant,1140,37.781359,-122.416942,13072,Asian Restaurant,Vegan Food
+14,Ananda Fuara,1212,37.77789,-122.416164,13199,Indian Restaurant,Vegan Food
+15,Sweetgreen,1321,37.789656,-122.391744,13065,Restaurant,Vegan Food
+16,Mixt Greens,1336,37.79451,-122.401732,13068,American Restaurant,Vegan Food
+17,Thai Idea Vegetarian Restaurant,1343,37.783391,-122.418998,13352,Thai Restaurant,Vegan Food
+18,Ike's Sandwiches,1414,37.78512,-122.419889,13068,American Restaurant,Vegan Food
+19,Rangoon Ruby,1435,37.780924,-122.420071,13072,Asian Restaurant,Vegan Food
+0,Soma Rec Center,433,37.778838,-122.406328,18008,Basketball Court,Basket court
+1,Berry Basketball Courts,1278,37.772031,-122.397898,18008,Basketball Court,Basket court
+2,Arterra Mission Bay,1291,37.771896,-122.397532,18008,Basketball Court,Basket court
+3,Alice Marble Basketball Court,2560,37.801395,-122.420205,18008,Basketball Court,Basket court
+4,NBA Nation,2660,37.759168,-122.412335,18008,Basketball Court,Basket court
+5,Hamilton Basketball Courts,2792,37.784569,-122.435625,18008,Basketball Court,Basket court
+6,Dolores Park Basketball Courts,3167,37.760956,-122.427849,18008,Basketball Court,Basket court
+7,Golden Gate Park Panhandle Basketball Courts,3527,37.771955,-122.445915,18008,Basketball Court,Basket court
+8,She Got Game Basketball Camp San Francisco,3703,37.784264,-122.446,18008,Basketball Court,Basket court
+9,Panhandle Basketball Courts,4611,37.768679,-122.453452,18008,Basketball Court,Basket court
+10,Bernal Heights Recreation Center,5024,37.738385,-122.416197,18008,Basketball Court,Basket court
+11,Al Kerr Court,5193,37.763735,-122.45811,18008,Basketball Court,Basket court
+12,Bay City Basketball Headquarters,5670,37.781086,-122.468411,18008,Basketball Court,Basket court
+13,Baker Beach half court,6795,37.791371,-122.480608,18008,Basketball Court,Basket court
+14,Basketball Courts,7974,37.711444,-122.418046,18008,Basketball Court,Basket court
+0,Starbucks,203,37.784199,-122.404135,13035,Coffee Shop,Starbucks
+1,Starbucks,245,37.78447,-122.404008,13035,Coffee Shop,Starbucks
+2,Starbucks,378,37.784144,-122.407429,13035,Coffee Shop,Starbucks
+3,Starbucks,435,37.765871,-122.40327,13035,Coffee Shop,Starbucks
+4,Starbucks,446,37.786145,-122.405612,13035,Coffee Shop,Starbucks
+5,Starbucks,657,37.787664,-122.401113,13035,Coffee Shop,Starbucks
+6,Starbucks,697,37.786534,-122.408216,13035,Coffee Shop,Starbucks
+7,Starbucks,793,37.787194,-122.410692,13035,Coffee Shop,Starbucks
+8,Starbucks,814,37.789293,-122.406729,13035,Coffee Shop,Starbucks
+9,Starbucks,816,37.789599,-122.401872,13035,Coffee Shop,Starbucks
+0,Presidio Knolls School,1328,37.773306,-122.413743,12056,Preschool,Schools
+1,Cathedral School For Boys,1421,37.792271,-122.413931,12058,Elementary School,Schools
+2,San Francisco Unified School District,1617,37.779265,-122.422123,12058,Elementary School,Schools
+3,Sacred Heart Cathedral Preparatory,1740,37.783313,-122.423437,12059,High School,Schools
+4,Montessori House Of Children,1755,37.785183,-122.423333,12056,Preschool,Schools
+5,Chinese American International School,1784,37.775275,-122.422111,12058,Elementary School,Schools
+6,Live Oak School,2140,37.763563,-122.399263,12058,Elementary School,Schools
+7,Stuart Hall High School,2159,37.788476,-122.427255,12059,High School,Schools
+8,New School San Francisco,2260,37.800905,-122.415086,12058,Elementary School,Schools
+9,Rosa Parks Elementary School,2280,37.783147,-122.429879,12058,Elementary School,Schools
+10,Daniel Webster Elementary SCHL,2509,37.760539,-122.396075,12058,Elementary School,Schools
+11,John O'Connell High School,2692,37.759628,-122.414441,12059,High School,Schools
+12,Children's Day School,2762,37.764166,-122.425172,12058,Elementary School,Schools
+13,Gateway High School,2843,37.783164,-122.437334,12059,High School,Schools
+14,Creative Arts Charter School,2845,37.779853,-122.435776,12058,Elementary School,Schools
+15,Jewish Community High School of the Bay,2859,37.781566,-122.436451,12059,High School,Schools
+16,Flood Mansion,2961,37.79464,-122.433785,12058,Elementary School,Schools
+17,Mission High School,3082,37.761531,-122.427166,12059,High School,Schools
+18,Sanchez Elementary School,3146,37.763622,-122.430587,12058,Elementary School,Schools
+19,Starr King Elementary School,3239,37.75324,-122.399229,12058,Elementary School,Schools
+20,McKinley Elementary School,3296,37.767045,-122.436236,12058,Elementary School,Schools
+21,City College of San Francisco Mission Campus,3357,37.755083,-122.420049,12057,Primary and Secondary School,Schools
+22,Town School For Boys,3358,37.791926,-122.440219,12058,Elementary School,Schools
+23,Pacific Primary School,3404,37.775584,-122.441615,12058,Elementary School,Schools
+24,Marina Middle School,3512,37.801808,-122.436145,12060,Middle School,Schools
+25,Chibi Chan Too,3677,37.783207,-122.445722,12056,Preschool,Schools
+26,Raoul Wallenberg Traditional High School,3708,37.780367,-122.446127,12059,High School,Schools
+27,San Francisco Day School,3745,37.778074,-122.446636,12058,Elementary School,Schools
+28,Harvey Milk Civil Rights Academy,3826,37.759027,-122.436406,12058,Elementary School,Schools
+29,Immaculate Conception Academy,3834,37.751725,-122.423362,12059,High School,Schools
+0,San Francisco International Airport (SFO),18466,37.624123,-122.395506,19040,International Airport,Airports
+1,Oakland International Airport (OAK),18478,37.7117,-122.212997,19040,International Airport,Airports

@@ -202,6 +202,10 @@ def sf_map(sf_center, sf_south):
     return sf_map
 
 def mean_coordinates_raw (list_):
+    """
+    This function returns the mean coordinate for a passed list of coordinates.
+    The list must contain lists of 2 positions (one for latittude and one for longitude) the result is returned in the same order it is passed.
+    """
     x = 0
     y = 0
     for i in list_:
@@ -213,6 +217,9 @@ def mean_coordinates_raw (list_):
     return [round(x,4), round(y,4)]
 
 def sf_map_2(sf_center, office_location):
+    """
+    This function maps the Tech and Design companies in the San Francisco City center along with the desired office location (mean coordinates of all offices)
+    """
     final_map = Map(location = [37.767, -122.4], zoom_start = 12)
     tech_group = folium.FeatureGroup(name=f"Tech ({sf_center[sf_center['type'] == 'tech'].shape[0]})")
     design_group = folium.FeatureGroup(name = f"Design ({sf_center[sf_center['type'] == 'design'].shape[0]})")
@@ -261,7 +268,140 @@ def sf_map_2(sf_center, office_location):
 
     return final_map
 
+def final_map(sf_center, office_location, near_office):
 
+    # Intiallize the map
+    office_nearby = Map(location = [37.72, -122.4], zoom_start = 11.4)
+    
+    # Create the groups for venues
+    pet_group = folium.FeatureGroup(name=f"Pet grooming ({near_office[near_office['group'] == 'Pet Grooming'].shape[0]})")
+    vegan_group = folium.FeatureGroup(name = f"Vegan restaurants ({near_office[near_office['group'] == 'Vegan Food'].shape[0]})")
+    basket_group = folium.FeatureGroup(name = f"Basketball courts ({near_office[near_office['group'] == 'Basket court'].shape[0]})")
+    starbucks_group = folium.FeatureGroup(name = f"Starbucks ({near_office[near_office['group'] == 'Starbucks'].shape[0]})")
+    schools_group = folium.FeatureGroup(name = f"Schools ({near_office[near_office['group'] == 'Schools'].shape[0]})")
+    airports_group = folium.FeatureGroup(name = f"Airports ({near_office[near_office['group'] == 'Airports'].shape[0]})")
+
+    # Create the groups for companies
+    tech_group = folium.FeatureGroup(name=f"Tech companies ({sf_center[sf_center['type'] == 'tech'].shape[0]})")
+    design_group = folium.FeatureGroup(name = f"Design companies ({sf_center[sf_center['type'] == 'design'].shape[0]})")
+
+    # Iteration through DataFrame of venues to create marker and add it to the corresponding group.
+    for index, row in near_office.iterrows():
+        
+        # 1. Marker: creates the marker in the office location and adds the name to it.
+        city = {
+            "location": [row["latitude"], row["longitude"]],
+            "tooltip": row["name"]
+        }
+            
+        # 2. Add the icon: based on the type of venue
+        
+        if row["group"] == "Pet Grooming":
+            icon = Icon (
+                color = "blue",
+                prefix="fa",
+                icon="dog"
+            )
+        elif row["group"] == "Vegan Food":
+            icon = Icon (
+                color = "lightgreen",
+                prefix="fa",
+                icon="leaf"
+            )
+        elif row["group"] == "Basket court":
+            icon = Icon (
+                color = "orange",
+                prefix="fa",
+                icon="basketball"
+            )
+        elif row["group"] == "Starbucks":
+            icon = Icon (
+                color = "green",
+                prefix="fa",
+                icon="coffee"
+            )
+        elif row["group"] == "Schools":
+            icon = Icon (
+                color = "purple",
+                prefix="fa",
+                icon="school"
+            )
+        else:
+            icon = Icon(
+                color = "cadetblue",
+                prefix="fa",
+                icon="plane"
+            )
+            
+        
+        # 3. Creates the map Marker
+        new_marker = Marker (**city, icon = icon)
+        
+        # 4. Adds the marker to the corresponding group
+        if row["group"] == "Pet Grooming":
+            new_marker.add_to(pet_group)
+        elif row["group"] == "Vegan Food":
+            new_marker.add_to(vegan_group)
+        elif row["group"] == "Basket court":
+            new_marker.add_to(basket_group)
+        elif row["group"] == "Starbucks":
+            new_marker.add_to(starbucks_group)
+        elif row["group"] == "Schools":
+            new_marker.add_to(schools_group)
+        else:
+            new_marker.add_to(airports_group)
+
+    # Iterates through the DataFrame of companies in San Francisco City Center to plot them on the map:
+    for index, row in sf_center.iterrows():
+
+        # 1. Marker: creates the marker in the office location and adds the name to it.
+        city = {
+            "location": [row["office latitude"], row["office longitude"]],
+            "tooltip": row["name"]
+        }
+            
+        # 2. Add the icon: based on the type of company
+        
+        if row["type"] == "tech":
+            icon = Icon (
+                color = "blue",
+                prefix="fa",
+                opacity = 0.1,
+                icon="briefcase",
+            )
+        else:
+            icon = Icon(
+                color = "green",
+                prefix="fa",
+                opacity = 0.1,
+                icon="shirt"
+            )
+        
+        # 3. Creates the map Marker
+        new_marker = Marker (**city, icon = icon)
+        
+        # 4. Adds the marker to the corresponding group
+        if row["type"] == "tech":
+            new_marker.add_to(tech_group)
+        else:
+            new_marker.add_to(design_group)
+
+    # Now we add the groups to the maps
+    pet_group.add_to(office_nearby)
+    vegan_group.add_to(office_nearby)
+    basket_group.add_to(office_nearby)
+    starbucks_group.add_to(office_nearby)
+    schools_group.add_to(office_nearby)
+    airports_group.add_to(office_nearby)
+    tech_group.add_to(office_nearby)
+    design_group.add_to(office_nearby)
+
+    # Add the office
+    add_marker("Office Location","red","computer",office_location,office_nearby)
+
+    # Add the llayer control
+    folium.LayerControl(collapsed=False, position="topleft").add_to(office_nearby)
+    return office_nearby
 
 
 
