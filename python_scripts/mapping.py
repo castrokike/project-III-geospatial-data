@@ -212,4 +212,56 @@ def mean_coordinates_raw (list_):
 
     return [round(x,4), round(y,4)]
 
+def sf_map_2(sf_center, office_location):
+    final_map = Map(location = [37.767, -122.4], zoom_start = 12)
+    tech_group = folium.FeatureGroup(name=f"Tech ({sf_center[sf_center['type'] == 'tech'].shape[0]})")
+    design_group = folium.FeatureGroup(name = f"Design ({sf_center[sf_center['type'] == 'design'].shape[0]})")
+    for index, row in sf_center.iterrows():
+
+        # 1. Marker: creates the marker in the office location and adds the name to it.
+        city = {
+            "location": [row["office latitude"], row["office longitude"]],
+            "tooltip": row["name"]
+        }
+            
+        # 2. Add the icon: based on the type of company
+        
+        if row["type"] == "tech":
+            icon = Icon (
+                color = "blue",
+                prefix="fa",
+                opacity = 0.1,
+                icon="briefcase",
+            )
+        else:
+            icon = Icon(
+                color = "green",
+                prefix="fa",
+                opacity = 0.1,
+                icon="shirt"
+            )
+            
+        
+        # 3. Creates the map Marker
+        new_marker = Marker (**city, icon = icon)
+        
+        # 4. Adds the marker to the corresponding group
+        if row["type"] == "tech":
+            new_marker.add_to(tech_group)
+        else:
+            new_marker.add_to(design_group)
+
+    # Now we add the groups to the maps
+    tech_group.add_to(final_map)
+    design_group.add_to(final_map)
+    # Add the llayer control
+    folium.LayerControl(collapsed=False, position="topleft").add_to(final_map)
+
+    add_marker("Office Location","red","computer",office_location,final_map)
+
+    return final_map
+
+
+
+
 
