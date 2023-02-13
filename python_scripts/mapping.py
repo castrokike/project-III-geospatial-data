@@ -73,3 +73,23 @@ def top_3_map (final_cities):
     # Add the llayer control
     folium.LayerControl(collapsed=False, position="topleft").add_to(top_3_cities_map)
     return top_3_cities_map
+
+def mean_coordinates (df):
+    return [round(df["office latitude"].mean(),4), round(df["office longitude"].mean(),4)]
+
+def add_marker (name, color, icon_, coordinates, map):
+    icon1 = Icon(
+    color = color,
+    opacity = 0.1,
+    prefix = "fa", #font-awesome
+    icon = icon_,
+    icon_color = "white"
+    )   
+    marker_ = Marker(
+    location = coordinates,
+    tooltip = name,
+    icon = icon1
+    )
+    marker_.add_to(map)
+    return map
+
