@@ -3,12 +3,6 @@
 
 from pymongo import MongoClient
 import pandas as pd
-import time
-import folium
-from folium import Choropleth, Circle, Marker, Icon, Map
-from folium.plugins import HeatMap, MarkerCluster
-import geopandas as gpd
-
 
 def connect_mongo(database, collection):
     """

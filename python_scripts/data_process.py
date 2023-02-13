@@ -25,6 +25,9 @@ def get_offices_location (data):
     return df
 
 def load_cities(city_names):
+    """
+    This function loads GeoJson files from the data/geojsons directory so that they can be used in maps.
+    """
     cities = {}
     for city_name in city_names:
         city_geo = gpd.read_file(f"data/geojsons/{city_name}.geojson")
@@ -32,6 +35,9 @@ def load_cities(city_names):
     return cities
 
 def add_city_name(df, cities):
+    """
+    This function adds the city name to a cities DF based on where they fall on a map, as defined by a set of GeoJson files.
+    """
     city_names = []
     for _, row in df.iterrows():
         lat, lon = row['office latitude'], row['office longitude']
