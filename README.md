@@ -1,6 +1,6 @@
 # Project-III-geospatial-data
 ### Andrés Castro | Project III Geospatial Data
-
+![Alt text](images/alesia-kazantceva-VWcPlbHglYc-unsplash.jpg)
 ## Context
 This project analyzed the best location for a new company office taking into account the following criteria considered to satisfy the needs of the team:
 
@@ -22,6 +22,8 @@ To gather the relevant data, the following data sources were used:
 ## Methodology
 Tech startups and design companies were queried from the crunchbase Mongo DB.
 A heatmap of all these companies was created and it was determined that the cities with more companies of these sectors were Los Angeles, San Francisco, New York, Miami, Paris and Manchester.
+<iframe src="data/maps/heat_map.html" height="500" width="500"></iframe>
+
 ![Alt text](images/heatmap.png)
 The top 3 (by ammount of companies) were considered for further analysis: San Francisco, Los Angeles and New York but it was decided to focus only on San Francisco for the rest of the analysis.
 ![Alt text](images/top3cities.png)
