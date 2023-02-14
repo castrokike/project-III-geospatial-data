@@ -39,5 +39,6 @@ The final map was created with the new office location, nearby companies, and ne
 ## Results
 The optimal location for the new office was found to be at coordinates [37.7824, -122.4039] in the San Francisco city center. The final map shows that this location satisfies all specified requirements, with nearby airports, schools, Starbucks, restaurants with vegan options, a basketball court, and pet grooming services.
 
+![Alt text](images/maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg)
 ## Conclusion
 This project analyzed the best location for a new company office in San Francisco, taking into consideration proximity to other tech and design companies and various other required amenities. The results show that the optimal location is in the San Francisco city center and satisfies all specified requirements.
